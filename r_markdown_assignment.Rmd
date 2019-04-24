@@ -1,0 +1,46 @@
+---
+title: "R markdown"
+author: "강형구"
+date: "2019년 4월 23일"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# r 마크다운 과제
+
+
+###이텔릭 텍스트
+
+_이텔릭 텍스트로 잘 나오고 있는 건가요_
+
+
+###볼드체 텍스트
+
+**볼드체가 잘 출력되고 있나요**
+
+
+###ggplot2 불러오기
+
+library(ggplot2)
+
+###gapminder 불러오기
+
+library(gapminder)
+
+###gaminder 그래프로 보여주기
+
+library(tidyverse)
+
+glimpse(gapminder)
+
+
+
+gapminder %>% count(year)
+gapminder %>%  group_by(year) %>% summarize(mean_life_exp = mean(lifeExp))
+
+
+gapminder %>% ggplot(aes(x=year, y=lifeExp, group=year)) + geom_boxplot()
+
